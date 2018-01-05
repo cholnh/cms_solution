@@ -25,6 +25,8 @@ public class testmain {
 		System.out.println(f.exists() + " " + f.getAbsolutePath());
 	}
 	
+	
+	
 	public static void namelist() {
 		
 //		final String sub_ProjectName = "\\[##_Project-Name_##\\]";
@@ -93,37 +95,6 @@ public class testmain {
 		}
 		
 		
-//		Project 이름		[##_Project-Name_##]
-//
-//		패키지 이름			[##_Project-Package-Name_##]					ex) com.solution.cms
-//						[##_Project-Package-Bean_##]					ex) com.solution.cms.handler.vo
-//						[##_Project-Package-Config_##]					ex) com.solution.cms.common.sql.Config
-//						[##_Project-Package-DAO_##]						ex) com.solution.cms.handler.dao
-//						[##_Project-Package-Action_##]					ex) com.solution.cms.handler.action
-//
-//		Subject 이름		[##_Subject-Name_##]							ex) Category
-//						[##_Subject-Name-lowercase_##]					ex) category
-//
-//		Action 이름		[##_Subject-Action-Name_##]						ex) CategoryAction
-//						
-//		Beans 이름		[##_Subject-Bean-Name_##]						ex) CategoryBean
-//		Beans 내용		[##_Subject-Bean-Content_##]					ex) Public Integer idx;
-//
-//		Subject Column	[##_Subject-Column-Name_##]						ex) idCommonPath
-//						[##_Subject-Column-Type_##]						ex) String
-//						[##_Subject-Column-Size_##]						ex) 5
-//						
-//		DAO 이름			[##_Subject-DAO-Name_##]						ex) CategoryDAO
-//		DAO 이름			[##_Subject-DAO-Alias_##]						ex) Cdao
-//
-//		add	sql			[##_Subject-DAO-Content-add-sql_##] 			ex) INSERT INTO [Subject-Name] VALUES(?, ?, ?, ?, ?, ? .... );
-//						[##_Subject-DAO-Content-add-sql-value_##]		ex) null, maps.get("[Column1-Name]"), maps.get("[Column2-Name]") .... 
-//
-//		edit sql		[##_Subject-DAO-Content-edit-sql_##] 			ex) UPDATE [Subject-Name] SET [maps.get("[Column1-Name]")] = ?, [NAMELIST] = ?, [PARENTIDX] = ? .... WHERE [idx] = ?;
-//						[##_Subject-DAO-Content-edit-sql-value_##]		ex) null, maps.get("[Column1-Name]"), maps.get("[Column2-Name]") .... maps.get("[targetIdx]")
-//						
-//		delete sql		[##_Subject-DAO-Content-delete-sql_##]			ex) DELETE FROM [Subject-Name] WHERE indexCATEGORY = ?;
-//						[##_Subject-DAO-Content-delete-sql-value_##]	ex) maps.get("[targetIdx]")
-//					
+
 	}
 }

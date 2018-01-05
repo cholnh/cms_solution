@@ -1,4 +1,5 @@
-package test;
+package solution.cms.common.util;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,38 +8,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Project
+ * FileManager
  * 
- * @version 1.0 [2017. 12. 18.]
+ * @version 1.0 [2018. 1. 5.]
  * @author Choi
  */
-public class Project {
+public class FileManager {
 
-	private String	projectPath;
-	private String 	projectName;
-	private File 	projectFile;
-	
-	public static void main(String...args) {
-		Project p = new Project("test");
-	}
-	
-	public Project(String projectName) {
-		this.projectName = projectName;
-		this.projectPath = "";
-		this.projectFile = new File(projectPath + projectName);
-		
-		try {
-			fcopy(getDefaultDummy(), projectFile);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-	
-	private File getRoot() {
-		return projectFile;
-	}
-	
 	public static void fcopy(File sourceLocation, File targetLocation) throws IOException {
 		if (sourceLocation.isDirectory()) {
 			fcopyDirectory(sourceLocation, targetLocation);
@@ -70,7 +46,4 @@ public class Project {
 		}
 	}
 	
-	private File getDefaultDummy() {
-		return new File("dummy");
-	}
 }
