@@ -1,8 +1,11 @@
 package solution.cms.common.util;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -14,7 +17,12 @@ import java.io.OutputStream;
  * @author Choi
  */
 public class FileManager {
-
+	/**
+	 * 
+	 * @param sourceLocation from
+	 * @param targetLocation to
+	 * @throws IOException
+	 */
 	public static void fcopy(File sourceLocation, File targetLocation) throws IOException {
 		if (sourceLocation.isDirectory()) {
 			fcopyDirectory(sourceLocation, targetLocation);
@@ -43,6 +51,19 @@ public class FileManager {
 			while ((length = in.read(buf)) > 0) {
 				out.write(buf, 0, length);
 			}
+		}
+	}
+	
+	public static void write(String path, String text, boolean append) {
+		try {
+			FileWriter fw = new FileWriter(new File(path), append) ;
+			fw.write(text);
+			fw.flush();
+			fw.close();
+		} catch (FileNotFoundException fe) {
+			
+		} catch(IOException e) {
+			e.printStackTrace();
 		}
 	}
 	

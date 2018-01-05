@@ -44,7 +44,7 @@ public class [##_Subject-Name_##]DAO  {
 		List<Map<String, Object>> listOfMaps = null;
 		try {
 			QueryRunner queryRunner = new QueryRunner();
-			queryRunner.update(conn, [##_Subject-DAO-Content-add-sql_##], [##_Subject-DAO-Content-add-sql-value_##]);
+			queryRunner.update(conn, "[##_Subject-DAO-Content-add-sql_##]", [##_Subject-DAO-Content-add-sql-value_##]);
 			
 			listOfMaps = queryRunner.query(conn, "SELECT LAST_INSERT_ID();", new MapListHandler());
 			if(!listOfMaps.isEmpty())
@@ -66,7 +66,7 @@ public class [##_Subject-Name_##]DAO  {
 		Connection conn = Config.getInstance().sqlLogin();
 		try {
 			QueryRunner queryRunner = new QueryRunner();
-			queryRunner.update(conn, [##_Subject-DAO-Content-edit-sql_##], [##_Subject-DAO-Content-edit-sql-value_##]);
+			queryRunner.update(conn, "[##_Subject-DAO-Content-edit-sql_##]", [##_Subject-DAO-Content-edit-sql-value_##]);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -83,7 +83,7 @@ public class [##_Subject-Name_##]DAO  {
 		Connection conn = Config.getInstance().sqlLogin();
 		try {
 			QueryRunner queryRunner = new QueryRunner();
-			queryRunner.update(conn, [##_Subject-DAO-Content-delete-sql_##], [##_Subject-DAO-Content-delete-sql-value_##]);
+			queryRunner.update(conn, "[##_Subject-DAO-Content-delete-sql_##]", [##_Subject-DAO-Content-delete-sql-value_##]);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

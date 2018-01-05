@@ -8,4 +8,5 @@ package solution.cms.project.subject;
  */
 public enum DataType {
 	String, Integer
+	
 }

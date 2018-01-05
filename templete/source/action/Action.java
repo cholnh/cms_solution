@@ -1,4 +1,4 @@
-package /*Project-Package-Action*/;
+package [##_Project-Package-Action_##];
 
 import java.util.ArrayList;
 
@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.manual.douzone.handler.vo.MemberBean;
-import /*Project-Package-Name*/.common.controller.Action;
-import /*Project-Package-DAO*/./*Subject-DAO-Name*/;
-import /*Project-Package-Bean*/./*Subject-Bean-Name*/;
+import [##_Project-Package-Name_##].common.controller.Action;
+import [##_Project-Package-DAO_##].[##_Subject-DAO-Name_##];
+import [##_Project-Package-Bean_##].[##_Subject-Bean-Name_##];
 
-public class /*Subject-Action-Name*/ implements Action {
+public class [##_Subject-Action-Name_##] implements Action {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -20,14 +20,14 @@ public class /*Subject-Action-Name*/ implements Action {
 		
 		MemberBean member = (MemberBean) session.getAttribute("MemberBean");
 		
-		/*Subject-DAO-Name*/ /*Subject-DAO-Alias*/ = new /*Subject-DAO-Name*/();
-		ArrayList</*Subject-Bean-Name*/> /*Subject-Name-lowercase*/List = /*Subject-DAO-Alias*/.getList();
+		[##_Subject-DAO-Name_##] [##_Subject-DAO-Alias_##] = new [##_Subject-DAO-Name_##]();
+		ArrayList<[##_Subject-Bean-Name_##]> [##_Subject-Name-lowercase_##]List = [##_Subject-DAO-Alias_##].getList();
 		
 		if(member != null)
 		{
-			request.setAttribute("/*Subject-Name-lowercase*/List", /*Subject-Name-lowercase*/List);
+			request.setAttribute("[##_Subject-Name-lowercase_##]List", [##_Subject-Name-lowercase_##]List);
 			
-			return "RequestDispatcher:jsp//*Subject-Name-lowercase*/.jsp";
+			return "RequestDispatcher:jsp/[##_Subject-Name-lowercase_##].jsp";
 		}
 		
 		return "RequestDispatcher:jsp/404.jsp";
