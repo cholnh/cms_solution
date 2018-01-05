@@ -20,6 +20,8 @@ public class Project {
 	private String 	projectName;
 	private File 	projectFile;
 	
+	private String 	packageName;
+	
 	private List<Subject> subject;
 	
 	public static void main(String...args) {
@@ -30,13 +32,17 @@ public class Project {
 		this.projectName = projectName;
 		this.projectPath = "";
 		this.projectFile = new File(projectPath + projectName);
-		
+		this.packageName = projectName;
 		try {
 			FileManager.fcopy(new File("dummy"), projectFile);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+	}
+	
+	public Project(String projectName, String packageName) {
+		this(projectName);
+		this.packageName = packageName;
 	}
 	
 	public Map<String, String> getProjectMap() {
@@ -77,14 +83,18 @@ public class Project {
 		Map<String, String> map = new HashMap<>();
 		
 		// project
-		map.put("Project-Name", "");
+		map.put("Project-Name", projectName);
 		
 		// package
-		map.put("Project-Package-Name", "");
-		map.put("Project-Package-Bean", "");
-		map.put("Project-Package-Config", "");
-		map.put("Project-Package-DAO", "");
-		map.put("Project-Package-Action", "");
+		map.put("Project-Package-Name", 	packageName);
+		map.put("Project-Package-Bean", 	packageName + ".handler.vo");
+		map.put("Project-Package-DAO", 		packageName + ".handler.dao");
+		map.put("Project-Package-Action", 	packageName + ".handler.action");
+		map.put("Project-Package-Config", 	packageName + ".common.sql.Config");
+		
+		
+		////////////////////////////////////////////////////////////////////////////////
+		
 		
 		// subject
 		map.put("Subject-Name", "");

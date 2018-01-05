@@ -19,6 +19,22 @@ public class Subject {
 		column = new HashMap<>();
 	}
 	
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public Map<String, DataType> getColumn() {
+		return column;
+	}
+
+	public void setColumn(Map<String, DataType> column) {
+		this.column = column;
+	}
+
 	public void addColumn(String name, DataType type) {
 		column.put(name, type);
 	}
